@@ -1,27 +1,28 @@
 /* The window. Sizes and wording follow the Mac app's search window (Sources/DigUpApp/SearchWindow.swift); the colors
-   are Digup Run's (moss and amber) over the system's light or dark, and selection is the usual blue. */
+   are Digup Run's paper + dig-teal over light or dark (selection is teal-tinted, not system blue). */
 
 :root {
-  --amber: #f2a22a;
-  --ember: #d97b1a;
-  --moss: #356652;
-  --leaf: #4f8058;
-  --sprout: #a2c78e;
-  --accent: #0a84ff;
-  --surface: #fbfbfb;
+  --amber: #14918b;
+  --ember: #085552;
+  --moss: #0d7a75;
+  --leaf: #14918b;
+  --sprout: #b8e8e4;
+  --accent: #0d7a75;
+  --surface: #faf8f4;
   --pane: rgba(0, 0, 0, 0.025);
-  --text: #1d1d1f;
-  --secondary: #6e6e73;
-  --tertiary: #a1a1a6;
-  --line: rgba(0, 0, 0, 0.09);
+  --text: #1a1f24;
+  --secondary: #5a636c;
+  --tertiary: #8b9299;
+  --line: #d9d4c8;
   --fill: rgba(0, 0, 0, 0.06);
   --fill-strong: rgba(0, 0, 0, 0.1);
   --tile: rgba(0, 0, 0, 0.05);
   --menu: #ffffff;
-  --mark: #ffdb33;
-  --chip: rgba(79, 128, 88, 0.1);
-  --chip-hover: rgba(79, 128, 88, 0.2);
-  --leaf-text: #4f8058;
+  --mark: rgba(13, 122, 117, 0.28);
+  --chip: rgba(13, 122, 117, 0.1);
+  --chip-hover: rgba(13, 122, 117, 0.2);
+  --leaf-text: #0b6e6a;
+  --link: #0b6e6a;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI Variable Text", "Segoe UI", system-ui, Ubuntu, Cantarell,
     "Noto Sans", sans-serif;
   font-size: 13px;
@@ -41,9 +42,12 @@
     --fill-strong: rgba(255, 255, 255, 0.14);
     --tile: rgba(255, 255, 255, 0.05);
     --menu: #2c2c2e;
-    --chip: rgba(162, 199, 142, 0.12);
-    --chip-hover: rgba(162, 199, 142, 0.22);
-    --leaf-text: #a2c78e;
+    --chip: rgba(20, 145, 139, 0.14);
+    --chip-hover: rgba(20, 145, 139, 0.24);
+    --leaf-text: #14918b;
+    --link: #14918b;
+    --ember: #14918b;
+    --mark: rgba(20, 145, 139, 0.35);
   }
 }
 
@@ -519,7 +523,7 @@ svg { display: block; }
   -webkit-user-select: text;
   cursor: text;
 }
-.passage mark, .code-lines mark { background: var(--mark); color: black; border-radius: 2px; }
+.passage mark, .code-lines mark { background: var(--mark); color: var(--text); border-radius: 2px; }
 .passage + .place, .code-lines + .place { position: absolute; right: 8px; bottom: 8px; }
 
 /* The lines of code that matched, numbered as in the file; the line it opens at is lit. */

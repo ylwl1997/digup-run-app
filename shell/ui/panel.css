@@ -1,19 +1,20 @@
 /* The search panel. Sizes and wording follow the Mac app's panel (Sources/DigUpApp/SearchPanelView.swift); the colors
-   are Digup Run's (moss and amber) over the system's light or dark. */
+   are Digup Run's paper + dig-teal over light or dark. */
 
 :root {
-  --amber: #f2a22a;
-  --ember: #d97b1a;
-  --moss: #356652;
-  --surface: #fbfbfb;
-  --text: #1d1d1f;
-  --secondary: #6e6e73;
-  --tertiary: #a1a1a6;
-  --line: rgba(0, 0, 0, 0.09);
-  --selected: rgba(10, 132, 255, 0.2);
-  --chip: rgba(0, 0, 0, 0.06);
-  --mark: rgba(242, 162, 42, 0.28);
-  --link: #0a6fd8;
+  --accent: #0d7a75;
+  --amber: #14918b;
+  --ember: #085552;
+  --moss: #0d7a75;
+  --surface: #faf8f4;
+  --text: #1a1f24;
+  --secondary: #5a636c;
+  --tertiary: #8b9299;
+  --line: #d9d4c8;
+  --selected: rgba(13, 122, 117, 0.18);
+  --chip: rgba(13, 122, 117, 0.08);
+  --mark: rgba(13, 122, 117, 0.28);
+  --link: #0b6e6a;
   --list-width: 330px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI Variable Text", "Segoe UI", system-ui, Ubuntu, Cantarell,
     "Noto Sans", sans-serif;
@@ -28,11 +29,11 @@
     --secondary: #a1a1a6;
     --tertiary: #6e6e73;
     --line: rgba(255, 255, 255, 0.1);
-    --selected: rgba(10, 132, 255, 0.32);
+    --selected: rgba(13, 122, 117, 0.32);
     --chip: rgba(255, 255, 255, 0.09);
-    --mark: rgba(242, 162, 42, 0.35);
-    --link: #4aa3ff;
-    --ember: #f2a22a;
+    --mark: rgba(20, 145, 139, 0.35);
+    --link: #14918b;
+    --ember: #14918b;
   }
 }
 
@@ -105,7 +106,7 @@ html, body {
 
 #query::placeholder { color: var(--tertiary); }
 
-/* Indexing (or the model's download) while results may be incomplete: amber, so it's seen. */
+/* Indexing (or the model's download) while results may be incomplete: dig-teal, so it's seen. */
 .activity {
   display: flex;
   align-items: center;

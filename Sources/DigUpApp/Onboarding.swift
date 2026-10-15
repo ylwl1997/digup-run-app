@@ -238,7 +238,7 @@ struct OnboardingView: View {
         }
         .frame(width: Self.size.width, height: Self.size.height)
         .background(alignment: .top) {
-            // A soft moss glow behind the top of each step, from the icon's colors.
+            // A soft dig-teal glow behind the top of each step, from the icon's colors.
             Brand.wash
                 .frame(height: 260)
                 .mask(LinearGradient(colors: [.black.opacity(0.10), .clear], startPoint: .top, endPoint: .bottom))

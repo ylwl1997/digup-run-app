@@ -1,18 +1,19 @@
 /* The setup window: Digup Run's first launch, and Choose Folders… later. The Mac app's onboarding
-   (Sources/DigUpApp/Onboarding.swift) is the reference; moss and amber are Digup Run's colors. */
+   (Sources/DigUpApp/Onboarding.swift) is the reference; paper + dig-teal are Digup Run's colors. */
 
 :root {
-  --amber: #f2a22a;
-  --ember: #d97b1a;
-  --moss: #356652;
-  --leaf: #4f8058;
-  --surface: #fbfbfb;
+  --amber: #14918b;
+  --ember: #085552;
+  --moss: #0d7a75;
+  --leaf: #14918b;
+  --accent: #0d7a75;
+  --surface: #f3f1eb;
   --card: #ffffff;
-  --text: #1d1d1f;
-  --secondary: #6e6e73;
-  --tertiary: #a1a1a6;
-  --line: rgba(0, 0, 0, 0.09);
-  --accent: #0a84ff;
+  --text: #1a1f24;
+  --secondary: #5a636c;
+  --tertiary: #8b9299;
+  --line: #d9d4c8;
+  --link: #0b6e6a;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI Variable Text", "Segoe UI", system-ui, Ubuntu, Cantarell,
     "Noto Sans", sans-serif;
   font-size: 13px;
@@ -28,6 +29,8 @@
     --secondary: #a1a1a6;
     --tertiary: #6e6e73;
     --line: rgba(255, 255, 255, 0.1);
+    --ember: #14918b;
+    --link: #14918b;
   }
 }
 
@@ -42,7 +45,7 @@ main { flex: 1; min-height: 0; overflow-y: auto; padding: 34px 48px 12px; }
 
 .hero { display: flex; flex-direction: column; align-items: center; text-align: center; }
 
-.icon { width: 96px; height: 96px; filter: drop-shadow(0 6px 14px rgba(53, 102, 82, 0.35)); }
+.icon { width: 96px; height: 96px; filter: drop-shadow(0 6px 14px rgba(13, 122, 117, 0.35)); }
 
 h1 { font-size: 30px; margin: 10px 0 0; }
 h2 { font-size: 24px; margin: 0 0 6px; }
@@ -95,7 +98,7 @@ h3 { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: 
 .subfolder .counts { font-size: 11px; color: var(--secondary); flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .subfolder.off .name, .subfolder.off .counts { opacity: 0.6; }
 .subfolder .time { font-size: 11px; color: var(--secondary); }
-.more { font: inherit; font-size: 11px; color: var(--ember); background: none; border: 0; padding: 4px 0 2px 58px; }
+.more { font: inherit; font-size: 11px; color: var(--link); background: none; border: 0; padding: 4px 0 2px 58px; }
 
 /* Setup's last step: the model's download, then indexing, as it goes. */
 .progress-card {
@@ -118,7 +121,7 @@ button {
 }
 button.primary { background: var(--moss); color: white; border-color: transparent; }
 button.primary:disabled { opacity: 0.45; }
-button.link { background: none; border: 0; color: var(--ember); padding: 10px 2px 0; }
+button.link { background: none; border: 0; color: var(--link); padding: 10px 2px 0; }
 
 .note { font-size: 11px; color: var(--secondary); margin-top: 18px; }
 

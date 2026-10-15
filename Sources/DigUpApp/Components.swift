@@ -2,19 +2,19 @@ import AppKit
 import DigUpKit
 import SwiftUI
 
-/// The app's own colors, from its icon (moss tiles around an amber D, `Resources/AppIcon`): amber marks what Digup Run
-/// finds (accent icons), moss is for brand moments (onboarding's glow and tiles); selection and controls follow the
-/// system accent color like any Mac app.
+/// Digup Run brand colors from digup.run dig-teal + paper (`docs/logo.svg`, `Resources/AppIcon`): teal marks what
+/// Digup Run finds (accent icons), deeper teal for brand moments (onboarding glow and tiles); selection and controls
+/// follow the system accent color like any Mac app.
 enum Brand {
-    static let amber = Color(red: 0.949, green: 0.635, blue: 0.165)    // #F2A22A, the D
-    static let ember = Color(red: 0.851, green: 0.482, blue: 0.102)    // #D97B1A, a deeper amber that holds up on white
-    static let moss = Color(red: 0.208, green: 0.400, blue: 0.322)     // #356652, the darkest tile
-    static let leaf = Color(red: 0.310, green: 0.502, blue: 0.345)     // #4F8058
-    static let sprout = Color(red: 0.635, green: 0.780, blue: 0.557)   // #A2C78E, a light tile
-    /// Accent icons: the D's amber.
+    static let amber = Color(red: 0.078, green: 0.569, blue: 0.545)    // #14918b, lighter dig-teal (found marks / accents)
+    static let ember = Color(red: 0.031, green: 0.333, blue: 0.322)    // #085552, deeper dig-teal
+    static let moss = Color(red: 0.051, green: 0.478, blue: 0.459)     // #0d7a75, dig-teal primary
+    static let leaf = Color(red: 0.043, green: 0.431, blue: 0.416)     // #0b6e6a, dig-teal link
+    static let sprout = Color(red: 0.722, green: 0.910, blue: 0.894)   // #b8e8e4, soft teal wash (from logo)
+    /// Accent icons: dig-teal lighter → deeper.
     static let gradient = LinearGradient(colors: [amber, ember], startPoint: .top, endPoint: .bottom)
-    /// Tiles with a white symbol on them, like the icon's.
-    static let tile = LinearGradient(colors: [leaf, moss], startPoint: .top, endPoint: .bottom)
+    /// Tiles with a white symbol on them, like the icon's teal plate.
+    static let tile = LinearGradient(colors: [amber, moss], startPoint: .top, endPoint: .bottom)
     /// The soft glow behind onboarding's steps.
     static let wash = LinearGradient(colors: [sprout, leaf], startPoint: .topLeading, endPoint: .bottomTrailing)
 }
