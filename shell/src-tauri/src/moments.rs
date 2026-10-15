@@ -74,7 +74,7 @@ fn default_app(path: &str) -> Option<PathBuf> {
 
 #[cfg(not(any(target_os = "linux", windows)))]
 fn default_app(_: &str) -> Option<PathBuf> {
-    None   // the shell is only tried out on a Mac, where the DigUp app opens at the page or moment itself
+    None   // the shell is only tried out on a Mac, where the Digup Run app opens at the page or moment itself
 }
 
 #[cfg(test)]

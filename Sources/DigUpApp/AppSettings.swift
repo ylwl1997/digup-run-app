@@ -3,11 +3,11 @@ import Foundation
 
 /// What to index, where the index and the model live, and the hotkey.
 ///
-/// Saved in the app's defaults domain (com.abdurrahim.DigUp). Launch arguments override any of it without being
+/// Saved in the app's defaults domain (com.ylwl1997.diguprun). Launch arguments override any of it without being
 /// saved, which is how tests point the app at the testbed and never at real folders:
 ///
-///     DigUp.app/Contents/MacOS/DigUp -roots ~/DigUpTestbed/real -indexDir <repo>/.dev/app-index \
-///         -modelsDir <repo>/.dev/models -defaultsSuite com.abdurrahim.DigUp.dev
+///     DigupRun.app/Contents/MacOS/DigupRun -roots ~/DigUpTestbed/real -indexDir <repo>/.dev/app-index \
+///         -modelsDir <repo>/.dev/models -defaultsSuite com.ylwl1997.diguprun.dev
 ///
 /// `-roots` takes one folder, several joined with ":", or a plist array. `-defaultsSuite` keeps what the app saves
 /// (onboarding's folders, a new hotkey) out of the real settings. With no roots the app indexes nothing and opens
@@ -16,7 +16,7 @@ nonisolated struct AppSettings: Sendable {
     var roots: [URL]
     /// Folders inside the roots that are never indexed.
     var excludedFolders: [URL]
-    /// File extensions that are never indexed ("heic", "txt"), on top of what DigUp never reads anyway.
+    /// File extensions that are never indexed ("heic", "txt"), on top of what Digup Run never reads anyway.
     var excludedTypes: [String]
     var indexDirectory: URL
     /// Where the model files are downloaded to and loaded from (the helpers get it as DIGUP_MODELS).
@@ -44,7 +44,7 @@ nonisolated struct AppSettings: Sendable {
     var codeQuietSeconds: Double
 
     static let supportDirectory = FileManager.default.homeDirectoryForCurrentUser
-        .appendingPathComponent("Library/Application Support/DigUp")
+        .appendingPathComponent("Library/Application Support/DigupRun")
     static let defaultIndexDirectory = supportDirectory.appendingPathComponent("index.noindex")
     static let defaultHotkey = "cmd+shift+space"
 

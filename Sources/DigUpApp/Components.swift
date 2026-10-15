@@ -2,7 +2,7 @@ import AppKit
 import DigUpKit
 import SwiftUI
 
-/// The app's own colors, from its icon (moss tiles around an amber D, `Resources/AppIcon`): amber marks what DigUp
+/// The app's own colors, from its icon (moss tiles around an amber D, `Resources/AppIcon`): amber marks what Digup Run
 /// finds (accent icons), moss is for brand moments (onboarding's glow and tiles); selection and controls follow the
 /// system accent color like any Mac app.
 enum Brand {

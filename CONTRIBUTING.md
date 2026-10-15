@@ -1,6 +1,6 @@
-# Contributing to DigUp
+# Contributing to Digup Run
 
-Thanks for your interest in DigUp. It's a small project with one maintainer and a plan for where it's going, so a few
+Thanks for your interest in Digup Run. It's a small project with one maintainer and a plan for where it's going, so a few
 notes up front save everyone time.
 
 ## Open an issue first
@@ -19,7 +19,7 @@ Once an issue says go:
   README) and include both results.
 - For speed or memory changes, measure before and after on the same computer.
 
-DigUp keeps everything on your computer, so changes that send data elsewhere, like telemetry or cloud services, aren't a
+Digup Run keeps everything on your computer, so changes that send data elsewhere, like telemetry or cloud services, aren't a
 fit.
 
 ## Where things are
@@ -32,7 +32,7 @@ the Windows and Linux builds. "Build from source" in the README gets you started
 
 ## What to expect
 
-DigUp is maintained alongside a day job and other projects, and most of the time it gets goes into the plan for where
+Digup Run is maintained alongside a day job and other projects, and most of the time it gets goes into the plan for where
 it's headed, so replies can take a few days, sometimes longer. A quiet week means busy, not ignored, and every issue
 gets an answer, even if it's "not now".
 
@@ -43,12 +43,12 @@ notes.
 ## Reporting a bug
 
 Helpful reports include your computer (on a Mac its chip and memory; on Windows and Linux its processor and graphics
-card), the system and DigUp versions (on Linux also the desktop, like GNOME or KDE, and Wayland or X11), what you did
+card), the system and Digup Run versions (on Linux also the desktop, like GNOME or KDE, and Wayland or X11), what you did
 or searched for, and what you expected instead. Logs are in:
 
-- Mac: `~/Library/Application Support/DigUp/index.noindex` (`app.log` and `indexer.log`)
-- Windows: `%LOCALAPPDATA%\com.abdurrahim.DigUp\logs`, and `worker.log` in `%LOCALAPPDATA%\DigUp\index`
-- Linux: `~/.local/share/com.abdurrahim.DigUp/logs`, and `worker.log` in `~/.local/share/digup/index`
+- Mac: `~/Library/Application Support/DigupRun/index.noindex` (`app.log` and `indexer.log`)
+- Windows: `%LOCALAPPDATA%\com.ylwl1997.diguprun\logs`, and `worker.log` in `%LOCALAPPDATA%\DigupRun\index`
+- Linux: `~/.local/share/com.ylwl1997.diguprun/logs`, and `worker.log` in `~/.local/share/digup-run/index`
 
 They can contain file names and your searches, so look through them before you paste.
 

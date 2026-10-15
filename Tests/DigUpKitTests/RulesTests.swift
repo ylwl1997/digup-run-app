@@ -4,7 +4,7 @@ import Testing
 
 @Suite struct RulesTests {
     let folder: URL = {
-        let url = FileManager.default.temporaryDirectory.appendingPathComponent("DigUpTests-\(UUID().uuidString)")
+        let url = FileManager.default.temporaryDirectory.appendingPathComponent("Digup RunTests-\(UUID().uuidString)")
         try? FileManager.default.createDirectory(at: url, withIntermediateDirectories: true)
         return url
     }()
@@ -146,9 +146,9 @@ import Testing
         }
         #expect(walked("/Users/me/Documents/trip.pdf"))
         #expect(walked("/Users/me"))
-        // DigUp's own index and log, with the home folder chosen: a change there asked for a sync, whose log line was
+        // Digup Run's own index and log, with the home folder chosen: a change there asked for a sync, whose log line was
         // a change again.
-        #expect(!walked("/Users/me/Library/Application Support/DigUp/index.noindex/app.log"))
+        #expect(!walked("/Users/me/Library/Application Support/DigupRun/index.noindex/app.log"))
         #expect(!walked("/Users/me/Library/Caches/com.apple.Safari/Cache.db"))
         #expect(!walked("/Users/me/Projects/site/node_modules/left-pad/index.js"))
         #expect(!walked("/Users/me/Movies/Exports.noindex/clip.mov"))

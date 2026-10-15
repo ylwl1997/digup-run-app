@@ -37,7 +37,7 @@ nonisolated struct EngineStatus: Sendable, Equatable {
     var waitingForModel = false
     /// Chosen folders that aren't there right now (an unplugged drive): skipped, and their files kept.
     var missingRoots: [String] = []
-    /// Chosen folders macOS doesn't let DigUp read (Privacy & Security → Files and Folders): skipped, files kept.
+    /// Chosen folders macOS doesn't let Digup Run read (Privacy & Security → Files and Folders): skipped, files kept.
     var unreadableRoots: [String] = []
     /// The code index, when code search is on.
     var code = Code()
@@ -51,7 +51,7 @@ nonisolated struct EngineStatus: Sendable, Equatable {
         var indexing: Progress?
         /// Code folders that aren't there right now (an unplugged drive): skipped, and their files kept.
         var missingRoots: [String] = []
-        /// Code folders macOS doesn't let DigUp read: skipped, files kept.
+        /// Code folders macOS doesn't let Digup Run read: skipped, files kept.
         var unreadableRoots: [String] = []
     }
 
@@ -87,11 +87,11 @@ nonisolated final class Engine: @unchecked Sendable {
     let indexDirectory: URL
     let modelsDirectory: URL
     let encoderIdleSeconds: Double
-    private let indexQueue = DispatchQueue(label: "DigUp.index", qos: .utility)
-    private let searchQueue = DispatchQueue(label: "DigUp.search", qos: .userInitiated)
-    private let encoderQueue = DispatchQueue(label: "DigUp.encoder", qos: .userInitiated)
+    private let indexQueue = DispatchQueue(label: "DigupRun.index", qos: .utility)
+    private let searchQueue = DispatchQueue(label: "DigupRun.search", qos: .userInitiated)
+    private let encoderQueue = DispatchQueue(label: "DigupRun.encoder", qos: .userInitiated)
 
-    private let watchQueue = DispatchQueue(label: "DigUp.watch", qos: .utility)
+    private let watchQueue = DispatchQueue(label: "DigupRun.watch", qos: .utility)
 
     // indexQueue only
     private var helper: Process?
@@ -629,7 +629,7 @@ nonisolated final class Engine: @unchecked Sendable {
         case "stopped":
             log("indexer: skipped \(tildePath(event["path"] as? String ?? "?")): it \(event["why"] as? String ?? "")")
         case "rescan":
-            log("indexer: reading \(int("files")) files again that DigUp reads better now (scans' words, SVGs)")
+            log("indexer: reading \(int("files")) files again that Digup Run reads better now (scans' words, SVGs)")
         case "pruned":
             log("indexer: \(int("files")) files under folders no longer chosen left the index")
         case "reindex":
