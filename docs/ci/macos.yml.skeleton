@@ -1,5 +1,6 @@
 # Builds Digup Run Mac (Apple Silicon) DMG on GitHub Actions — unsigned / ad-hoc for first betas.
 # Signed+notarized DMGs still need a Mac with Developer ID (scripts/release.sh).
+# Needs Swift tools 6.2 (Package.swift) → Xcode 26.x on macos-15 (not default Xcode 16.4 / Swift 5.10).
 # Dispatch: gh workflow run macos.yml
 name: macOS
 
@@ -15,18 +16,29 @@ permissions:
 
 jobs:
   macos:
-    runs-on: macos-14
+    runs-on: macos-15
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           ref: ${{ inputs.ref }}
 
-      - name: Select Xcode
+      - name: Select Xcode 26.2 (Swift 6.2)
         run: |
-          # Prefer newest installed Xcode (Swift 6.2+ as upstream expects).
-          sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+          # macos-15 default is Xcode 16.4 → Swift 5.10; Package.swift needs tools 6.2.
+          # Prefer 26.2; fall back to newest Xcode_26.*.app if the pin moves.
+          for app in /Applications/Xcode_26.2.app /Applications/Xcode_26.3.app /Applications/Xcode_26.app; do
+            if [[ -d "$app" ]]; then
+              sudo xcode-select -s "$app/Contents/Developer"
+              break
+            fi
+          done
           xcodebuild -version
           swift --version
+          swift --version | grep -qE 'Swift version 6\.(2|3|4|5|6)' || {
+            echo "need Swift 6.2+ for // swift-tools-version: 6.2" >&2
+            ls /Applications/Xcode*.app || true
+            exit 1
+          }
 
       - name: CMake (llama.cpp)
         run: brew install cmake ninja || true
