@@ -4,7 +4,7 @@ import Testing
 
 @Suite struct FolderSelectionTests {
     let folder: URL = {
-        let url = FileManager.default.temporaryDirectory.appendingPathComponent("DigUpTests-\(UUID().uuidString)")
+        let url = FileManager.default.temporaryDirectory.appendingPathComponent("Digup RunTests-\(UUID().uuidString)")
         try? FileManager.default.createDirectory(at: url, withIntermediateDirectories: true)
         return URL(fileURLWithPath: FolderSelection.realPath(url.path))   // /private/var/…, as crawls report it
     }()

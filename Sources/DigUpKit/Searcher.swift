@@ -107,7 +107,7 @@ public final class Searcher {
 
     /// How much finding the query's words counts against meaning (`search`). Code's words count for less: they're
     /// everywhere in code ("app", "running", "location"), and a stretch that shares a few of them beat the one that
-    /// does what the query says (2026-10-09, the real-code eval of 27 queries over DigUp, Sparkle and llama.cpp: 18 → 20
+    /// does what the query says (2026-10-09, the real-code eval of 27 queries over Digup Run, Sparkle and llama.cpp: 18 → 20
     /// found first, the top 5 unchanged; the synthetic code eval 40 → 41 of 41; 1.5 changed nothing, 0.5 lost the top 5).
     public static let wordWeight = 2.0
     public static let codeWordWeight = 1.0

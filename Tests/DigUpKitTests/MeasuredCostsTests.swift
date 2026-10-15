@@ -6,7 +6,7 @@ import Testing
 @Suite final class MeasuredCostsTests {
     let folder: URL = {
         let caches = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)[0]
-        let url = caches.appendingPathComponent("DigUpTests-\(UUID().uuidString)")
+        let url = caches.appendingPathComponent("Digup RunTests-\(UUID().uuidString)")
         try? FileManager.default.createDirectory(at: url, withIntermediateDirectories: true)
         return url
     }()

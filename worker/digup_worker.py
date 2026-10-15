@@ -1,4 +1,4 @@
-"""DigUp embedding worker: EmbeddingGemma 2 on MLX (mlx-vlm), one process per session.
+"""Digup Run embedding worker: EmbeddingGemma 2 on MLX (mlx-vlm), one process per session.
 
 Protocol: one JSON object per line on stdin, one JSON reply per line on stdout. Logs go to stderr.
 The first line the worker prints is {"ready": true, "info": {...}} once the model is loaded.

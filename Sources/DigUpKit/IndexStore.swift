@@ -87,7 +87,7 @@ public final class IndexStore {
         var version: Int64 = 0
         try db.query("PRAGMA user_version") { version = $0.int(0) }
         guard version <= Self.schemaVersion else {
-            throw Database.Failure(message: "this index was made by a newer DigUp (schema \(version))")
+            throw Database.Failure(message: "this index was made by a newer Digup Run (schema \(version))")
         }
         guard version < Self.schemaVersion else { return }
         // The app and its helper can open the index at the same moment: one migrates while the other waits for it (up
@@ -383,8 +383,8 @@ public final class IndexStore {
                    [.text(state), .optional(detail), .optional(json), .double(Date().timeIntervalSince1970), .int(id)])
     }
 
-    /// Files read once more because DigUp reads them better now, each kind once per index (the schema stays as it was,
-    /// so an older DigUp still opens the index): PDFs with pages read as pictures, whose words come from OCR now
+    /// Files read once more because Digup Run reads them better now, each kind once per index (the schema stays as it was,
+    /// so an older Digup Run still opens the index): PDFs with pages read as pictures, whose words come from OCR now
     /// (`meta` "scans_ocr"), and pictures that couldn't be read at all, like SVGs, which AppKit draws now
     /// ("pictures_drawn"). Only where this machine does either. Returns how many files.
     @discardableResult

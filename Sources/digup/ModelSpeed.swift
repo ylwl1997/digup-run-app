@@ -60,7 +60,7 @@ enum ModelSpeed {
     /// try slower, never faster), or once two tries came out clearly slower than `rival`'s total (the other device's,
     /// which is then kept whatever these times are).
     static func measure(_ model: any Embedder, tries: Int = 3, rival: Double? = nil) throws -> Measurement {
-        let folder = FileManager.default.temporaryDirectory.appendingPathComponent("DigUp-speed-\(UUID().uuidString)")
+        let folder = FileManager.default.temporaryDirectory.appendingPathComponent("Digup Run-speed-\(UUID().uuidString)")
         try FileManager.default.createDirectory(at: folder, withIntermediateDirectories: true)
         defer { try? FileManager.default.removeItem(at: folder) }
         let picture = folder.appendingPathComponent("picture.bmp"), sound = folder.appendingPathComponent("sound.wav")

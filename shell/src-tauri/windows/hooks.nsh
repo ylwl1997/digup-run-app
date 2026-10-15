@@ -1,4 +1,4 @@
-; DigUp's additions to Tauri's NSIS installer (bundle.windows.nsis.installerHooks).
+; Digup Run's additions to Tauri's NSIS installer (bundle.windows.nsis.installerHooks).
 
 ; The helper folder is replaced whole: an update would otherwise leave behind what an older version had there and
 ; this one doesn't (another ffmpeg's DLLs).
@@ -8,13 +8,13 @@
   ${EndIf}
 !macroend
 
-; "Delete the application data" also takes DigUp's model (865 MB) and its index: the app keeps them in
-; %LOCALAPPDATA%\DigUp, not in the data folders named after its identifier, which Tauri deletes. Never on an update.
+; "Delete the application data" also takes Digup Run's model (865 MB) and its index: the app keeps them in
+; %LOCALAPPDATA%\DigupRun, not in the data folders named after its identifier, which Tauri deletes. Never on an update.
 !macro NSIS_HOOK_POSTUNINSTALL
   ${If} $DeleteAppDataCheckboxState = 1
   ${AndIf} $UpdateMode <> 1
-    RMDir /r "$LOCALAPPDATA\DigUp\Models"
-    RMDir /r "$LOCALAPPDATA\DigUp\index"
-    RMDir "$LOCALAPPDATA\DigUp"
+    RMDir /r "$LOCALAPPDATA\DigupRun\Models"
+    RMDir /r "$LOCALAPPDATA\DigupRun\index"
+    RMDir "$LOCALAPPDATA\DigupRun"
   ${EndIf}
 !macroend

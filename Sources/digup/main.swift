@@ -2,14 +2,14 @@ import DigUpKit
 import Foundation
 import LlamaRuntime
 
-// DigUp's developer CLI. Every command works on an explicit index folder, so tests never touch the real one.
+// Digup Run's developer CLI. Every command works on an explicit index folder, so tests never touch the real one.
 
 #if !os(Windows)
 signal(SIGPIPE, SIG_IGN)   // a dead worker must surface as an error, not kill us (Windows has no SIGPIPE)
 #endif
 
 let usage = """
-    digup: search your files by meaning (DigUp developer CLI)
+    digup: search your files by meaning (Digup Run developer CLI)
 
       digup estimate <folder>... [--json]     what would be indexed, and how long the first pass takes
       digup index <folder>... [--limit N]     sync the index with these folders, embed what's new, then the rest
@@ -34,7 +34,7 @@ let usage = """
                                               resume, checked (JSON lines: see DownloadModel)
 
     Options:
-      --index DIR          index folder (default: DigUp's Application Support folder; see `digup status`)
+      --index DIR          index folder (default: Digup Run's Application Support folder; see `digup status`)
       --code               estimate, index or show the code index of these folders (code.sqlite in the index
                            folder): source files, their repos' docs and notebooks, minus what git ignores
       --kind K,K           screenshot, image, pdf, doc, audio, video
@@ -49,7 +49,7 @@ let usage = """
       --code-stretch N     characters a stretch of code holds at most (default 1800; 1200 and 3600 lost on the evals)
 
     The model: EmbeddingGemma 2 on llama.cpp, from $DIGUP_MODELS (only there, when set), else
-    ~/Library/Application Support/DigUp/Models or the Hugging Face cache. DIGUP_WORKER_DIR=worker uses the
+    ~/Library/Application Support/DigupRun/Models or the Hugging Face cache. DIGUP_WORKER_DIR=worker uses the
     mlx-vlm reference worker instead (evals).
     """
 

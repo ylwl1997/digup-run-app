@@ -1,4 +1,4 @@
-// What every platform shares of the platform layer: the shapes the engine asks for, and where DigUp keeps its files.
+// What every platform shares of the platform layer: the shapes the engine asks for, and where Digup Run keeps its files.
 // Platform/Apple and Platform/Portable implement the same names.
 import Foundation
 
@@ -40,25 +40,25 @@ extension Data {
     }
 }
 
-/// Where DigUp keeps its own files on each OS: the model and the index.
+/// Where Digup Run keeps its own files on each OS: the model and the index.
 public enum AppPaths {
-    /// macOS: ~/Library/Application Support/DigUp. Windows: %LOCALAPPDATA%\DigUp. Linux: $XDG_DATA_HOME/digup, or
-    /// ~/.local/share/digup.
+    /// macOS: ~/Library/Application Support/DigupRun. Windows: %LOCALAPPDATA%\DigupRun. Linux: $XDG_DATA_HOME/digup-run, or
+    /// ~/.local/share/digup-run.
     public static var applicationSupport: URL {
         let home = FileManager.default.homeDirectoryForCurrentUser
         let environment = ProcessInfo.processInfo.environment
         #if os(macOS)
-        return home.appendingPathComponent("Library/Application Support/DigUp")
+        return home.appendingPathComponent("Library/Application Support/DigupRun")
         #elseif os(Windows)
         if let local = environment["LOCALAPPDATA"], !local.isEmpty {
-            return URL(fileURLWithPath: local).appendingPathComponent("DigUp")
+            return URL(fileURLWithPath: local).appendingPathComponent("DigupRun")
         }
-        return home.appendingPathComponent("AppData/Local/DigUp")
+        return home.appendingPathComponent("AppData/Local/DigupRun")
         #else
         if let data = environment["XDG_DATA_HOME"], !data.isEmpty {
-            return URL(fileURLWithPath: data).appendingPathComponent("digup")
+            return URL(fileURLWithPath: data).appendingPathComponent("digup-run")
         }
-        return home.appendingPathComponent(".local/share/digup")
+        return home.appendingPathComponent(".local/share/digup-run")
         #endif
     }
 

@@ -56,10 +56,10 @@ public final class Indexer {
         self.store = store
         self.options = options
         self.makeEmbedder = makeEmbedder
-        // One folder per process ($TMPDIR/DigUp-<pid>, which the helper clears up after a process that died), and one
+        // One folder per process ($TMPDIR/Digup Run-<pid>, which the helper clears up after a process that died), and one
         // in it per indexer: the helper runs two (the main index and the code index), and each clears its own away.
         scratch = FileManager.default.temporaryDirectory
-            .appendingPathComponent("DigUp-\(ProcessInfo.processInfo.processIdentifier)")
+            .appendingPathComponent("Digup Run-\(ProcessInfo.processInfo.processIdentifier)")
             .appendingPathComponent(UUID().uuidString)
         try FileManager.default.createDirectory(at: scratch, withIntermediateDirectories: true)
     }
@@ -373,7 +373,7 @@ public final class Indexer {
         }
     }
 
-    private let preparing = DispatchQueue(label: "DigUp.prepare", qos: .utility)
+    private let preparing = DispatchQueue(label: "Digup Run.prepare", qos: .utility)
     private var jobsPrepared = 0   // names the scratch folders
 
     /// The file being read (extracted) right now, and since when: for a watchdog. Apple's frameworks have run away on

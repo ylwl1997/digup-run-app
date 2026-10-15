@@ -10,7 +10,7 @@ import WinSDK
 
 @Suite struct IndexStoreTests {
     let folder: URL = {
-        let url = FileManager.default.temporaryDirectory.appendingPathComponent("DigUpTests-\(UUID().uuidString)")
+        let url = FileManager.default.temporaryDirectory.appendingPathComponent("Digup RunTests-\(UUID().uuidString)")
         try? FileManager.default.createDirectory(at: url, withIntermediateDirectories: true)
         return url
     }()
@@ -64,7 +64,7 @@ import WinSDK
 
     #if canImport(AppKit)
     @Test func picturesThatCouldntBeReadAreReadOnceMore() throws {
-        // An SVG skipped by an older DigUp as "small image 0×0" (ImageIO couldn't open it): AppKit draws it now.
+        // An SVG skipped by an older Digup Run as "small image 0×0" (ImageIO couldn't open it): AppKit draws it now.
         let store = try IndexStore(directory: folder)
         let svg = try store.insert(file("/a/chart.svg", inode: 1))
         try store.finish(svg, state: "skipped", detail: "small image 0×0")
